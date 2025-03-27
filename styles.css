@@ -1,0 +1,368 @@
+h1 {
+    font-size: 4rem;
+    text-align: center;
+    margin-top: 180px;
+}
+
+.part1, .part2, .part3 {
+    display: inline-block;  /* 必须设置为行内块级元素 */
+    vertical-align: bottom; 
+  }
+.part1 {
+    color:#765800;
+    letter-spacing: 2px;
+  }
+.part2 {
+    color: #beae79;
+    font-size: 2rem;
+    letter-spacing: -10px;
+    position: relative;
+    bottom: 1.2rem; /* 根据实际效果调整 */
+    display: inline-block;  /* 必须设置为块级元素 */
+    transform: scaleX(0.8); /* 水平压缩为80% */
+    transform-origin: left; /* 从左侧开始缩放（避免偏移） */
+  }
+  .part3 {
+    color: #beae79;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    position: relative;
+    bottom: 0.8rem; /* 根据实际效果调整 */
+  }
+
+.image-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    height: 300px; /* 明确指定高度 */
+}
+
+.expand{
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    position: absolute;
+    top: 40%; /* 现在会基于容器高度的10%偏移 */        
+}
+
+.graphic-button-container {
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 9999;
+}
+
+/* 图形按钮样式 */
+.graphic-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 50;
+    position: relative;
+    display: inline-block;
+    left: 6%;
+    top: -80px;
+}
+
+.graphic-button img {
+    width: 50px; /* 调整按钮大小 */
+    height: 50px;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.workgraphic-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 50; 
+    position: relative;
+    display: inline-block;
+    left: -25%;
+    top: 0px;
+}
+
+.workgraphic-button img {
+    width: 50px; /* 调整按钮大小 */
+    height: 50px;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.lovergraphic-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 50; 
+    position: relative;
+    display: inline-block;
+    left: -58%;
+    top: 85px;
+}
+
+.lovergraphic-button img {
+    width: 70px; /* 调整按钮大小 */
+    height: 70px;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+/* 提示文字样式 */
+.tooltip {
+    position: absolute;
+    left: 80px; /* 提示文字距离按钮的间距 */
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.9); 
+    color: #7a7a7a;
+    padding: 15px 19px;
+    border-radius: 6px;
+    font-size: 16px;
+    white-space: nowrap;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    text-align: left;  /* 强制左对齐 */
+    width: auto;       /* 撑满容器宽度 */
+}
+
+
+/* 鼠标悬停效果 */
+.graphic-button:hover img {
+    transform: scale(1.1); 
+}
+
+.workgraphic-button:hover img {
+    transform: scale(1.1); 
+}
+
+.lovergraphic-button:hover img {
+    transform: scale(1.1); 
+}
+
+/* 字体延迟效果 */
+.graphic-button:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+.workgraphic-button:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lovergraphic-button:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+  /* 悬停时只展开面板111 */
+  .panel1 {
+    position: fixed;
+    right: 0;
+    top: 32%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 80px;
+    background:#b2932e; 
+    border-radius: 8px 0 0 8px;
+    overflow: hidden;
+    transition: width 0.3s ease;
+    cursor: pointer;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    z-index: 100;
+  }
+  
+  .panel-content1 {
+    position: absolute;
+   width: 700px;
+   padding: 10px;
+   left: 0;
+   top: 0;
+   color: #ffffff;
+  }
+  
+
+  .panel1:hover {
+    width: 700px; /* 展开到完整宽度 */
+  }
+
+
+/* 悬停时只展开面板222 */
+  .panel2 {
+    position: fixed;
+    right: 0;
+    top: 43%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 80px;
+    background:#e5ca9b;
+    border-radius: 8px 0 0 8px;
+    overflow: hidden;
+    transition: width 0.3s ease;
+    cursor: pointer;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    z-index: 100;
+  }
+  
+  .panel-content2 {
+    position: absolute;
+    width: 700px; /* 完整宽度 */
+    padding: 10px;
+    left: 0;
+    top: 0;
+    white-space: nowrap;
+    color: #ffffff;
+  }
+  
+  .panel2:hover {
+    width: 850px; /* 展开到完整宽度 */
+  }
+
+
+  /* 悬停时只展开面板333 */
+  .panel3 {
+    position: fixed;
+    right: 0;
+    top: 54%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 80px;
+    background:#ebc9b7;
+    border-radius: 8px 0 0 8px;
+    overflow: hidden;
+    transition: width 0.3s ease;
+    cursor: pointer;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    z-index: 100;
+  }
+  
+  .panel-content3 {
+    position: absolute;
+    width: 700px; /* 完整宽度 */
+    padding: 10px;
+    left: 0;
+    top: 0;
+    white-space: nowrap;
+    color: #ffffff;
+  }
+  
+  .panel3:hover {
+    width: 950px; /* 展开到完整宽度 */
+  }
+
+   /* 悬停时只展开面板444 */
+   .panel4 {
+    position: fixed;
+    right: 0;
+    top: 65%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 80px;
+    background:#ac9a9b;
+    border-radius: 8px 0 0 8px;
+    overflow: hidden;
+    transition: width 0.3s ease;
+    cursor: pointer;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    z-index: 100;
+  }
+  
+  .panel-content4 {
+    position: absolute;
+    width: 700px; /* 完整宽度 */
+    padding: 10px;
+    left: 0;
+    top: 0;
+    white-space: nowrap;
+    color: #ffffff;
+  }
+  
+  .panel4:hover {
+    width: 600px; /* 展开到完整宽度 */
+  }
+
+  .capital{
+    font-size: 2.5rem;
+    text-align:center;
+    color:#ffffff;
+    margin-left: 10px;
+  }
+
+  .xiaoxie{
+    font-size: 1rem;
+    text-align: center;
+    color:#ffffff;
+    margin-left: 3px;
+  }
+
+  .personality-card {
+    display: flex;
+    margin-bottom: 80px;
+    background: white;
+    opacity: 0.6;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    max-width: 1100px; /* 还可以设置最大宽度 */
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #765800;
+    color: #333;
+}
+
+.pros-section {
+    background: #fff5f5;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.pros-title {
+    font-size: 1.2rem;
+    color: #ff4757;
+    margin-bottom: 10px;
+}
+
+.cons-section {
+    background-color: rgba(82, 58, 68,0.3);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.cons-title {
+    font-size: 1.2rem;
+    color: #3d283f;
+    margin-bottom: 10px;
+}
+
+ .traits-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .trait-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #beae79;
+        }
